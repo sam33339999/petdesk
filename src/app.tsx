@@ -1,5 +1,15 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { createHashRouter, RouterProvider } from 'react-router';
+import { Button } from "./components/ui/button"
+
+
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <div className="text-3xl"><Button>Click me</Button></div>,
+  },
+]);
 
 const root = createRoot(document.body);
-root.render(<h2 className="text-3xl bg-red-200">Hello from React!</h2>);
+root.render(<RouterProvider router={router} />);
